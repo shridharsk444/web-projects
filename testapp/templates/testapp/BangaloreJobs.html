@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang='en', dir="ltr">
+<head>
+    <title></title>
+</head>
+<body>
+<h1>BangaloreJobs Information</h1>
+{% if jobs_list %}
+<table id="tab">
+    <thead>
+    <th>Date</th>
+    <th>Company</th>
+    <th>Title</th>
+    <th>Eligibility</th>
+    <th>Address</th>
+    <th>Email</th>
+    </thead>
+{% for jobs in jobs_list %}
+    <tr>
+        <td>{{jobs.date}}</td>
+        <td>{{jobs.company}}</td>
+        <td>{{jobs.title}}</td>
+        <td>{{jobs.eligibility}}</td>
+        <td>{{jobs.address}}</td>
+        <td>{{jobs.email}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p> NO jobs found in Bangalore</p>
+{% endif %}
+</body>
+</html>
